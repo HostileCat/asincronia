@@ -6,6 +6,7 @@ const filtrar = x => x.name === "evaluacion"; //un callback que se cumple si el 
   let user = await response.json(); // se obtiene el contenido, en este caso un objeto, cuando la promesa se resuelva.
 
   let respuestGithub = await fetch(`https://api.github.com/users/${user.name}/repos`)// se llama a la api con la url. En este caso obtiene un objeto que contiene la url, mas el estado.
+  console.log(respuestGithub)
   let usuariogithub = await respuestGithub.json(); // se obtiene el contenido, en este caso un array con todos los repositorios del usuario seleccionado, cuando la promesa se resuelva.
   console.log(usuariogithub)
   usuariogithub.forEach(element => { // se recorre el array usando un forEach
